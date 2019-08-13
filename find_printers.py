@@ -12,7 +12,6 @@ def find_printers_lpinfo():
     for ipp in ipps:
         ip_string = subprocess.check_output(["ping", ipp, "-w 2", "-c 1"])
         ip = re.findall(r"\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b", ip_string)[0]
-        print ip
         printer = {
             'ip': ip,
             'ipp': ipp
