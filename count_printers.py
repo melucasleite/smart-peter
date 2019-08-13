@@ -12,11 +12,11 @@ def count_printers():
         ip = printer['ip']
         print ''
         print "{} @ {}".format(printer['ipp'].split('.')[0], printer['ip'])
-        response = requests.get('http://{}'.format(ip), verify=False)
+        response = requests.get('https://{}'.format(ip), verify=False)
         response2 = requests.get(
-            'http://{}/DevMgmt/ProductUsageDyn.xml'.format(ip), verify=False)
+            'https://{}/DevMgmt/ProductUsageDyn.xml'.format(ip), verify=False)
         response3 = requests.get(
-            'http://{}/hp/device/InternalPages/Index?id=UsagePage'.format(ip), verify=False)
+            'https://{}/hp/device/InternalPages/Index?id=UsagePage'.format(ip), verify=False)
         f = open('responses/{}.txt'.format(ip), 'w+')
         f2 = open('responses/{}-2.txt'.format(ip), 'w+')
         f3 = open('responses/{}-3.txt'.format(ip), 'w+')
