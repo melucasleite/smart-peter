@@ -1,0 +1,6 @@
+/venv
+*.pyc
+/responses
+ips.txt
+printers.json
+settings.json
