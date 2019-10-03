@@ -1,0 +1,142 @@
+{% extends "admin/base.html" %} {% block content %}
+<div class="row page-titles">
+  <div class="col-md-5 col-8 align-self-center">
+    <h3 class="text-themecolor">Configure Skills & Remarks</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/settings">Settings</a>
+      </li>
+      <li class="breadcrumb-item active">Skills & Remarks</li>
+    </ol>
+  </div>
+</div>
+<!-- Row -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Skills</h4>
+        <p>
+          Students will be evaluated 1 to 5
+          <i class="fa fa-star"></i>, based on these skills.
+        </p>
+        <div id="skills"></div>
+        <p id="noSkills" style="display: None">
+          No Skills. Try
+          <a data-toggle="modal" data-target="#modalAddSkill" href="#">
+            adding a Skill.
+          </a>
+        </p>
+        <div class="mt-3">
+          <button
+            data-toggle="modal"
+            data-target="#modalAddSkill"
+            class="btn btn-info"
+          >
+            Add Skill
+            <i class="ml-1 fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Remarks</h4>
+        <p>
+          Remarkable points to improve or remarkable strenghts.
+        </p>
+        <div id="remarks"></div>
+        <p id="noRemarks" style="display: none">
+          No Remarks. Try
+          <a data-toggle="modal" data-target="#modalAddRemark" href="#">
+            adding a Remark.
+          </a>
+        </p>
+        <div class="mt-3">
+          <button
+            data-toggle="modal"
+            data-target="#modalAddRemark"
+            class="btn btn-info"
+          >
+            Add Remark
+            <i class="ml-1 fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %} {% block modals %}
+  <div id="modalAddSkill" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Skill</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="addSkill(event, this)">
+            <div class="form-group">
+              <label>Name</label>
+              <input name="name" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-info waves-effect">
+                Add Skill
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalAddRemark" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Remark</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="addRemark(event, this)">
+            <div class="form-group">
+              <label>Name</label>
+              <input name="name" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-info waves-effect">
+                Add Remark
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%endblock %} {% block scripts %}
+  <script type="text/template" id="skill_template">
+      <button class="btn btn-inverse mb-2 mr-2">
+        [[name]]
+      <i class="fa fa-times ml-3" onclick="deleteSkill([[id]])"></i>
+    </button>
+  </script>
+  <script type="text/template" id="remark_template">
+      <button class="btn btn-inverse mb-2 mr-2">
+        [[name]]
+      <i class="fa fa-times ml-3" onclick="deleteRemark([[id]])"></i>
+    </button>
+  </script>
+  <script src="/static/app/views/admin/settings/skills_and_remarks.js"></script>
+  {% endblock %}
+</div>

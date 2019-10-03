@@ -1,0 +1,184 @@
+.client-logo {
+  max-height: 50px;
+}
+
+.sidebar-nav > ul > li.active > a,
+.sidebar-nav > ul > li.active:hover > a {
+  color: #ffffff !important;
+  background: #263238 !important;
+}
+
+.label-bg {
+  font-size: 16px;
+  padding: 9px;
+}
+
+.label-md {
+  font-size: 14px;
+  padding: 7px;
+}
+
+.clockpicker-popover {
+  z-index: 999999;
+}
+
+.form-control:focus {
+  color: #747d8a;
+}
+
+html body .text-primary {
+  color: #7460ee !important;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #444e57 !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #444e57;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #444e57;
+}
+
+.select2 {
+  width: 100% !important;
+}
+
+.navbar-header {
+  min-width: 150px !important;
+}
+
+.navbar-header,
+.navbar-header img {
+  max-height: 50px !important;
+  padding: 0 0 4px 0;
+}
+
+.navbar-brand,
+.navbar-header {
+  max-height: 100%;
+}
+
+.navbar-light .navbar-brand {
+  color: #f2f2f2;
+  font-family: Poppins, sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.client-primary {
+  color: #175293;
+}
+
+.topbar {
+  background: #231f20;
+}
+
+.lecture-td.active {
+  background: #231f20;
+  color: white;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+
+.badge-outline-success,
+.badge-outline-info,
+.badge-outline-primary,
+.badge-outline-warning,
+.badge-outline-danger,
+.badge-outline-purple,
+.badge-outline-red,
+.badge-outline-inverse {
+  border: solid 1px grey;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+
+.badge-outline-success {
+  border-color: #26c6da;
+}
+
+.badge-outline-info {
+  border-color: #1e88e5;
+}
+
+.badge-outline-primary {
+  border-color: #7460ee;
+}
+
+.badge-outline-warning {
+  border-color: #ffb22b;
+}
+
+.badge-outline-danger {
+  border-color: #fc4b6c;
+}
+
+.badge-outline-purple {
+  border-color: #7460ee;
+}
+
+.badge-outline-red {
+  border-color: #fb3a3a;
+}
+
+.badge-outline-inverse {
+  border-color: #2f3d4a;
+}
+
+.lecture-td.active > .badge-outline-success {
+  background: #26c6da;
+}
+
+.lecture-td.active > .badge-outline-info {
+  background: #1e88e5;
+}
+
+.lecture-td.active > .badge-outline-primary {
+  background: #7460ee;
+}
+
+.lecture-td.active > .badge-outline-warning {
+  background: #ffb22b;
+}
+
+.lecture-td.active > .badge-outline-danger {
+  background: #fc4b6c;
+}
+
+.lecture-td.active > .badge-outline-purple {
+  background: #7460ee;
+}
+
+.lecture-td.active > .badge-outline-red {
+  background: #fb3a3a;
+}
+
+.lecture-td.active > .badge-outline-inverse {
+  background: #2f3d4a;
+}
+
+.skill-review p {
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+
+.skill-review i {
+  color: #ffb22b;
+}
+
+.preloader {
+  opacity: 0.5;
+  background: #263238;
+}
+
+.btn-bg {
+  font-size: 35px;
+}

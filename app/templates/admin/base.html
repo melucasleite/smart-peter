@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/assets/images/favicon.png"
+    />
+    <title>The Hut</title>
+    <link
+      href="/static/assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/assets/plugins/dropify/dist/css/dropify.min.css"
+    />
+
+    <!-- chartist CSS -->
+    <link
+      href="/static/assets/plugins/chartist-js/dist/chartist.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/chartist-js/dist/chartist-init.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/css-chart/css-chart.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+      rel="stylesheet"
+    />
+    <!-- Page plugins css -->
+    <link
+      href="/static/assets/plugins/clockpicker/dist/jquery-clockpicker.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Daterange picker plugins css -->
+    <link
+      href="/static/assets/plugins/timepicker/bootstrap-timepicker.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/daterangepicker/daterangepicker.css"
+      rel="stylesheet"
+    />
+    <!--This page css - Morris CSS -->
+    <link href="/static/assets/plugins/c3-master/c3.min.css" rel="stylesheet" />
+    <link
+      href="/static/assets/plugins/clockpicker/dist/jquery-clockpicker.min.css"
+      rel="stylesheet"
+    />
+    <!-- Vector CSS -->
+    <link
+      href="/static/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/plugins/select2/dist/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Custom CSS -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+    <!-- You can change the theme colors from here -->
+    <link href="/static/css/colors/blue-dark.css" id="theme" rel="stylesheet" />
+    <link href="/static/css/client.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link
+      href="/static/assets/plugins/fontawesome/css/all.css"
+      rel="stylesheet"
+    />
+    <!--load all styles -->
+  </head>
+
+  <body class="fix-header fix-sidebar logo-center card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader" style="display: None">
+      <svg class="circular" viewBox="25 25 50 50">
+        <circle
+          class="path"
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
+          stroke-width="2"
+          stroke-miterlimit="10"
+        />
+      </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+          <!-- ============================================================== -->
+          <!-- Logo -->
+          <!-- ============================================================== -->
+          <div class="navbar-header">
+            <img src="/static/assets/images/client/navbar-logo.png" alt="" />
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav mr-auto mt-md-0">
+              <!-- This is  -->
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="fas fa-bars"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="fas fa-bars"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-muted waves-effect waves-dark "
+                  href="/student-signin"
+                >
+                  <span class="round bg-inverse">
+                    <i class="far fa-user "></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+              <!-- ============================================================== -->
+              <!-- Comment -->
+              <!-- ============================================================== -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark"
+                  href=""
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="far fa-envelope"></i>
+                  <div class="notify">
+                    <span class="heartbit"></span> <span class="point"></span>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right mailbox scale-up">
+                  <ul>
+                    <li>
+                      <div class="drop-title text-center">
+                        These items need your attention
+                      </div>
+                    </li>
+                    <li>
+                      <div class="message-center" style="height: unset">
+                        <!-- Message -->
+                        <a href="/students/review">
+                          <div class="mail-contnet">
+                            <h5>Close Classes</h5>
+                            <span class="mail-desc">
+                              There are students pending reviews
+                            </span>
+                          </div>
+                          <div
+                            class="btn btn-danger btn-circle ml-3 pending-review"
+                          ></div>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+                  href=""
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  ><img
+                    src="/static/assets/images/users/1.jpg"
+                    alt="user"
+                    class="profile-pic user-photo"
+                /></a>
+                <div class="dropdown-menu dropdown-menu-right scale-up">
+                  <ul class="dropdown-user">
+                    <li>
+                      <div class="dw-user-box">
+                        <div class="u-img">
+                          <img
+                            src="/static/assets/images/users/1.jpg"
+                            alt="user"
+                            class="profile-pic user-photo"
+                          />
+                        </div>
+                        <div class="u-text">
+                          <h4>Uriel Jab</h4>
+                          <p class="text-muted">uriel@gmail.com</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#"
+                        ><i class="far fa-address-card"></i> My Profile</a
+                      >
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="/settings"
+                        ><i class="fas fa-cogs"></i> Setting</a
+                      >
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#" onclick="logout()"
+                        ><i class="fa fa-power-off"></i> Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <li>
+                <a class="waves-effect waves-dark" href="/">
+                  <i class="fas fa-th-large"></i>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="waves-effect waves-dark" href="/lectures">
+                  <i class="far fa-calendar"></i>
+                  <span class="hide-menu">Lectures</span>
+                </a>
+              </li>
+              <li>
+                <a class="waves-effect waves-dark" href="/students">
+                  <i class="fas fa-users"></i>
+                  <span class="hide-menu">Students</span>
+                </a>
+              </li>
+              <li>
+                <a class="waves-effect waves-dark" href="/students/review">
+                  <i class="far fa-star"></i>
+                  <span class="hide-menu"
+                    >Review Students <span class="text-danger pending-review"></span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="waves-effect waves-dark" href="/finances">
+                  <i class="fas fa-wallet"></i>
+                  <span class="hide-menu">Finances</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="has-arrow waves-effect waves-dark"
+                  href="#"
+                  aria-expanded="false"
+                  ><i class="fas fa-cogs"></i>
+                  <span class="hide-menu">Settings </span>
+                </a>
+                <ul aria-expanded="false" class="collapse">
+                  <li><a href="/settings/profile">Profile</a></li>
+                  <li><a href="/settings/password">Password</a></li>
+                  <li><a href="/settings/lectures">Lectures</a></li>
+                  <li><a href="/settings/level">Level</a></li>
+                  <li>
+                    <a href="/settings/skills_and_remarks">Skills & Remarks </a>
+                  </li>
+                  <li>
+                    <a href="/settings/teachers">Teachers</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="page-wrapper">
+        <div class="container-fluid">
+          {% block content %}{% endblock %}
+        </div>
+        <footer class="footer">
+          © 2019 Designed with love by
+          <a href="https://lucasleite.us">Lucas Leite</a>
+        </footer>
+      </div>
+      {% block modals %}{% endblock %}
+    </div>
+    <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="/static/assets/plugins/jquery-render/jquery.render.min.js"></script>
+    <script src="/static/assets/plugins/select2/dist/js/select2.full.min.js"></script>
+    <script src="/static/assets/plugins/popper/popper.min.js"></script>
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/assets/plugins/moment/moment-with-locales.min.js"></script>
+    <script src="/static/js/jquery.slimscroll.js"></script>
+    <script src="/static/js/waves.js"></script>
+    <script src="/static/assets/plugins/dropify/dist/js/dropify.min.js"></script>
+    <script src="/static/js/sidebarmenu.js"></script>
+    <script src="/static/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="/static/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/static/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="/static/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/static/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/static/js/custom.min.js"></script>
+    <script src="/static/assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="/static/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="/static/assets/plugins/d3/d3.min.js"></script>
+    <script src="/static/assets/plugins/c3-master/c3.min.js"></script>
+    <script src="/static/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="/static/assets/plugins/vectormap/jquery-jvectormap-us-aea-en.js"></script>
+    <script src="/static/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <!-- Page plugins css -->
+    <script src="/static/assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <link href="/static/assets/plugins/sweetalert2/dark.css" rel="stylesheet" />
+    <script src="/static/assets/plugins/polyfill/promise-polyfill.js"></script>
+    <script src="/static/assets/plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script src="/api/entryPoint.js"></script>
+    <script src="/static/app/api.js"></script>
+    <script src="/static/app/login.js"></script>
+    <script src="/static/app/ui.js"></script>
+    <script src="/static/app/views/admin/base.js?v2"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

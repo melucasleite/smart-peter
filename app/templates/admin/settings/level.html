@@ -1,0 +1,72 @@
+{% extends "admin/base.html" %} {% block content %}
+<div class="row page-titles">
+  <div class="col-md-5 col-8 align-self-center">
+    <h3 class="text-themecolor">Configure Student Levels</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/settings">Settings</a>
+      </li>
+      <li class="breadcrumb-item active">Student Levels</li>
+    </ol>
+  </div>
+</div>
+<!-- Row -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Levels</h4>
+        <div id="levels"></div>
+        <button
+          data-toggle="modal"
+          data-target="#modalAddLevel"
+          class="btn btn-info"
+        >
+          Add Level
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block modals %}
+<div id="modalAddLevel" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Level</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Skill Name -->
+        <div class="form-group">
+          <form onsubmit="addLevel(event, this)">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" name="name" />
+            </div>
+            <button type="submit" class="btn btn-info waves-effect">
+              Add Level
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock %} {% block scripts %}
+<script type="text/template" id="level_template">
+    <button class="btn btn-inverse mb-2 mr-3">
+       [[name]]
+    <i class="fa fa-times ml-3" onclick="deleteLevelConfirm([[id]])"></i>
+  </button>
+</script>
+
+<script src="/static/app/views/admin/settings/level.js"></script>
+{% endblock %}

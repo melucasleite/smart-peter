@@ -1,0 +1,103 @@
+{% extends "admin/base.html" %} {% block content %}
+<div class="row page-titles">
+  <div class="col-md-5 col-8 align-self-center">
+    <h3 class="text-themecolor">Settings</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="/settings">Settings</a>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <!-- Update Password -->
+  <div class="col-lg-3">
+    <a href="/settings/profile">
+      <div class="card card-inverse text-center">
+        <div class="card-header p-5">
+          <i class="fa fa-id-card fa-2x"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="m-b-0 text-white">Profile</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+  <!-- Update Password -->
+  <div class="col-lg-3">
+    <a href="/settings/password">
+      <div class="card card-inverse text-center">
+        <div class="card-header p-5">
+          <i class="fab fa-slack-hash fa-2x"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="m-b-0 text-white">Password</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+  <!-- Update Lectures -->
+  <div class="col-lg-3">
+    <a href="/settings/lectures">
+      <div class="card card-inverse text-center">
+        <div class="card-header p-5">
+          <i class="far fa-calendar-alt fa-2x"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="m-b-0 text-white">Lectures</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+  <!-- Update Password -->
+  <div class="col-lg-3">
+    <a href="/settings/skills_and_remarks">
+      <div class="card card-inverse text-center">
+        <div class="card-header p-5">
+          <i class="far fa-star fa-2x"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="m-b-0 text-white">Skills & Remarks</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+  <!-- Update Password -->
+  <div class="col-lg-3">
+    <a href="/settings/teachers">
+      <div class="card card-inverse text-center">
+        <div class="card-header p-5">
+          <i class="fas fa-chalkboard-teacher fa-2x"></i>
+        </div>
+        <div class="card-body">
+          <h4 class="m-b-0 text-white">Teachers</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<style>
+  .select2 {
+    width: 100% !important;
+  }
+</style>
+<script>
+  $(function() {
+    $(".select2").select2();
+    $("#select2").select2();
+    $("#select2")
+      .append(new Option("Lucas Leite (me@lucasleite.us)", 0, false, false))
+      .append(new Option("Uriel Habes (me@lucasleite.us)", 0, false, false))
+      .trigger("change");
+  });
+
+  $(document).ready(function() {
+    // Basic
+    $(".dropify").dropify();
+  });
+</script>
+{% endblock %}

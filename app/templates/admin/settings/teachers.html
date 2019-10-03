@@ -1,0 +1,313 @@
+{% extends "admin/base.html" %} {% block content %}
+<div class="row page-titles">
+  <div class="col-md-5 col-8 align-self-center">
+    <h3 class="text-themecolor">Configure Teachers</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/settings">Settings</a>
+      </li>
+      <li class="breadcrumb-item active">Teachers</li>
+    </ol>
+  </div>
+</div>
+<!-- Row -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Teachers</h4>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" />
+        </div>
+        <div class="table-responsive m-t-20">
+          <table class="table stylish-table table-striped">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td colspan="3">Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lucas Meira Leite</td>
+                <td>me@lucasleite.us</td>
+                <td>
+                  <button class="btn btn-outline-primary">
+                    Reset Password
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-info">Change Email</button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-danger">Block User</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Antonio</td>
+                <td>antio@germany.com</td>
+                <td>
+                  <button class="btn btn-outline-primary">
+                    Reset Password
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-info">Change Email</button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-danger">Block User</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Athus Vieira</td>
+                <td>athus@vieira.us</td>
+                <td colspan="3">
+                  <button class="btn btn-outline-warning">Unblock User</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            data-toggle="modal"
+            data-target="#modalAddTeacher"
+            class="btn btn-info"
+          >
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block modals %}
+<div id="modalAddTeacher" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Teacher</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Teacher Name -->
+        <div class="form-group has-danger">
+          <label for="exampleInputuname">Teacher Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="ti-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" id="exampleInputuname" />
+          </div>
+          <small class="form-control-feedback">
+            Missing teacher name
+          </small>
+        </div>
+        <!-- Teacher Email -->
+        <div class="form-group has-danger">
+          <label for="exampleInputuname">Teacher Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="ti-user"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" id="exampleInputuname" />
+          </div>
+          <small class="form-control-feedback">
+            Missing teacher e-mail
+          </small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-info waves-effect"
+          data-dismiss="modal"
+        >
+          Add Teacher
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<
+<div id="modalEditLecture" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Lecture</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Day of Week -->
+        <div class="form-group">
+          <label for="exampleInputuname">Day of Week</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="ti-user"></i>
+              </span>
+            </div>
+            <select
+              type="text"
+              class="form-control"
+              id="exampleInputuname"
+              placeholder="Username"
+            >
+              <option value="">Monday</option>
+              <option value="">Thuesday</option>
+              <option value="">Wednessday</option>
+              <option value="">Thursday</option>
+              <option value="">Friday</option>
+              <option value="">Saturday</option>
+              <option value="">Sunday</option>
+            </select>
+          </div>
+        </div>
+        <!-- Start - End -->
+        <div class="form-group has-danger">
+          <div class="row">
+            <div class="col-lg-6">
+              <label>Start</label>
+              <div
+                class="input-group clockpicker "
+                data-placement="bottom"
+                data-align="top"
+                data-autoclose="true"
+              >
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="far fa-clock"></i
+                  ></span>
+                </div>
+                <input type="text" class="form-control" value="08:00" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <label>End</label>
+              <div
+                class="input-group clockpicker "
+                data-placement="bottom"
+                data-align="top"
+                data-autoclose="true"
+              >
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="far fa-clock"></i
+                  ></span>
+                </div>
+                <input type="text" class="form-control" value="12:00" />
+              </div>
+            </div>
+          </div>
+          <small class="form-control-feedback">
+            Start can't be after the end.
+          </small>
+        </div>
+        <!-- Students Capacity -->
+        <div class="form-group has-danger">
+          <label for="exampleInputuname">Students Capacity</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="ti-user"></i>
+              </span>
+            </div>
+            <input
+              type="number"
+              value="7"
+              class="form-control"
+              id="exampleInputuname"
+            />
+          </div>
+          <small class="form-control-feedback">
+            Missing student capacity.
+          </small>
+        </div>
+        <!-- Lecture Name -->
+        <div class="form-group has-danger">
+          <label for="exampleInputuname">Lecture Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="ti-user"></i>
+              </span>
+            </div>
+            <input
+              type="text"
+              value="Intermediate"
+              class="form-control"
+              id="exampleInputuname"
+            />
+          </div>
+          <small class="form-control-feedback">
+            Missing lecture name.
+          </small>
+        </div>
+        <!-- Accent -->
+        <div class="form-group">
+          <label for="exampleInputuname">Accent Color</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="ti-user"></i>
+              </span>
+            </div>
+            <select
+              type="text"
+              class="form-control text-info"
+              id="exampleInputuname"
+              placeholder="Username"
+            >
+              <option class="text text-info" value="">Info</option>
+              <option class="text text-danger" value="">Danger</option>
+              <option class="text text-success" value="">Success</option>
+              <option class="text text-warning" value="">Warning</option>
+              <option class="text text-primary" value="">Primary</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          data-dismiss="modal"
+          class="btn btn-danger waves-effect"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary waves-effect"
+          data-dismiss="modal"
+        >
+          Update Lecture
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock %} {% block scripts %}
+
+<script>
+  $(".clockpicker")
+    .clockpicker({
+      donetext: "Done"
+    })
+    .find("input")
+    .change(function() {
+      console.log(this.value);
+    });
+</script>
+
+{% endblock %}
