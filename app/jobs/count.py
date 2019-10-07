@@ -1,6 +1,6 @@
 from app import app, Printer, Count, db
 import app.crawler as crawler
-
+from datetime import datetime
 
 def count():
     with app.app_context():
@@ -16,6 +16,7 @@ def count():
                 count = int(filter(lambda x: x.isdigit(), count))
                 print count
                 printer.count = count
+                printer.last_count == datetime.now()
                 db.session.add(Count(printer.id, count))
                 db.session.commit()
             else:

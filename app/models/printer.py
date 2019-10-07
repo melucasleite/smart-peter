@@ -18,6 +18,7 @@ class Printer(db.Model):
     count = db.Column(db.Integer)
 
     created_at = db.Column(db.DateTime)
+    last_count = db.Column(db.DateTime)
     deleted = db.Column(db.Boolean, default=False)
 
     def __init__(self, pat, model, name, ip, crawler, location):
@@ -29,6 +30,7 @@ class Printer(db.Model):
         self.location = location
         self.count = 0
         self.created_at = datetime.now()
+        self.last_count = datetime.now()
         self.deleted = False
 
     def to_dict(self):
@@ -40,5 +42,6 @@ class Printer(db.Model):
             "crawler": self.crawler,
             "location": self.location,
             "count": self.count,
-            "created_at": self.created_at.isoformat()
+            "created_at": self.created_at.isoformat(),
+            "last_count": self.last_count.isoformat()
         }
