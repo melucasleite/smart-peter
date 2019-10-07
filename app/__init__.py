@@ -1,4 +1,4 @@
-#encoding=utf-8
+# encoding=utf-8
 from flask import Flask, render_template, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -15,17 +15,13 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app.models import *
-from app.api import *
-from app.views import *
 from app.utils import error_handlers
-from app.jobs.lectureHistory import generate_lecture_history
-from app.jobs.studentPayment import generate_payments
+from app.views import *
+from app.jobs.count import count
 
-scheduler = BackgroundScheduler(
-    jobstores={'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')})
+
+scheduler = BackgroundScheduler()
+# jobstores={'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')})
 scheduler.start()
-scheduler.add_job(generate_lecture_history, id="generate_lecture_history", replace_existing=True, trigger="interval", minutes=5)
-scheduler.add_job(generate_payments, id="generate_payments", replace_existing=True, trigger="interval", minutes=1)
-
-if __name__ == "__main__":
-    app.run(debug=True)
+scheduler.add_job(count, id="count", replace_existing=True,
+                  trigger="interval", seconds=10)

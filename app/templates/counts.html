@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="row page-titles">
+  <div class="col-12 align-self-center">
+    <h3 class="text-themecolor">Dashboard</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="table-responsive m-t-40">
+        <table
+          id="count"
+          class="display nowrap table table-hover table-striped table-bordered"
+          cellspacing="0"
+          width="100%"
+        >
+          <thead>
+            <tr>
+              <th>PAT</th>
+              <th>Modelo</th>
+              <th>IP</th>
+              <th>Localização</th>
+              <th>Contagem</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="/static/app/counts.js"></script>
+{% endblock %}

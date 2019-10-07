@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% block content %}
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="row page-titles">
+  <div class="col-12 align-self-center">
+    <h3 class="text-themecolor">Dashboard</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <div class="row" id="printers"></div>
+  </div>
+</div>
+<button class="btn btn-info" data-toggle="modal" data-target="#addPrinter">
+  Adicionar impressora
+</button>
+
+<div id="addPrinter" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Adicionar Impressora</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="addPrinter(event, this)">
+          <input type="hidden" name="crawler" id="crawler" />
+          <input type="hidden" name="name" id="name" />
+          <div class="form-group">
+            <label>Patrimônio</label>
+            <input class="form-control pat" type="text" name="pat" />
+          </div>
+          <div class="form-group">
+            <label>Modelo</label>
+            <select
+              name="model"
+              class="form-control"
+              id="model-select"
+              onchange="onChangeModel(this)"
+            >
+            </select>
+          </div>
+          <div class="form-group">
+            <label>IP</label>
+            <input class="form-control ip_address" type="text" name="ip" />
+          </div>
+          <button class="btn btn-info waves-effect" type="submit">
+            Adicionar Impressora
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %} {% block scripts %}
+  <script type="text/template" id="printer-template">
+    <div class="col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <p>PAT <span>[[pat]]</span></p>
+            <p>Model <span>[[model]]</span></p>
+            <p>IP <span>[[ip]]</span></p>
+            <p>Crawler <span>[[crawler]]</span></p>
+            <p>Location <span>[[location]]</span></p>
+            <p>Count <span>[[count]]</span></p>
+          </div>
+        </div>
+      </div>
+  </script>
+  <script src="/static/app/index.js"></script>
+  {% endblock %}
+</div>
