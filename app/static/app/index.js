@@ -5,6 +5,11 @@ var models = [
     crawler: "hp_configpage"
   },
   {
+    name: "HP LaserJet 600 M602",
+    id: "hp_m602",
+    crawler: "hp_usagepage"
+  },
+  {
     name: "HP Officejet Pro 8100 N811a",
     id: "hp_8100",
     crawler: "hp_devmgmt"
