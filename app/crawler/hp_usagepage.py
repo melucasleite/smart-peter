@@ -10,4 +10,4 @@ def hp_usagepage(ip):
     response = requests.get(url, verify=False)
     soup = BeautifulSoup(response.content, 'html.parser')
     data = soup.find(id="UsagePage.EquivalentImpressionsTable.Print.Total")
-    return data.contents[0]
+    return data.contents[0].split('.')[0]
