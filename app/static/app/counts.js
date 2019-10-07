@@ -24,7 +24,7 @@ function renderTable() {
     data: printers,
     columns: [
       { data: "pat" },
-      { data: "model" },
+      { data: "name" },
       { data: "ip" },
       { data: "location" },
       { data: "count" }

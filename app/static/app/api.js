@@ -3,7 +3,7 @@ var defaultApiError = "Occoreu um erro com sua solicitação.";
 var applicationError = "Erro na aplicação. Entre em contato com o suporte.";
 var connectionApiError =
   "Erro de conexão com o servidor. Verifique sua conexão de internet. Caso esteja on-line. Entre em contato com o suporte.";
-var defaultApiSuccess = "Request processed.";
+var defaultApiSuccess = "";
 
 function errorHandler(data) {
   if (data.readyState == 4) {
@@ -23,7 +23,7 @@ function errorHandler(data) {
 function defaultSuccess(data, callback) {
   message = data.message ? data.message : defaultApiSuccess;
   Swal.fire({
-    title: "Success!",
+    title: "Pronto.",
     text: message,
     timer: 2000,
     type: "success"
@@ -36,13 +36,14 @@ function loginRedirect(data) {
 
 function defaultConfirm(callback) {
   Swal.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
+    title: "Tem certeza?",
+    text: "",
     type: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, delete it!"
+    confirmButtonText: "Sim",
+    cancelButtonText: "Cancelar"
   }).then(result => {
     if (result.value) {
       callback();

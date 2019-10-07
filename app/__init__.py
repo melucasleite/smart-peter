@@ -24,4 +24,4 @@ scheduler = BackgroundScheduler()
 # jobstores={'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')})
 scheduler.start()
 scheduler.add_job(count, id="count", replace_existing=True,
-                  trigger="interval", seconds=10)
+                  trigger="interval", seconds=5*60)

@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+<div class="row page-titles">
+  <div class="col-md-5 col-8 align-self-center">
+    <h3 class="text-themecolor">Configurações</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <form id="config" onsubmit="saveConfig(event, this)">
+          <div class="form-group">
+            <label>Servidor Remoto</label>
+            <input name="api" type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Chave de Acesso</label>
+            <input name="token" type="password" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Nome do Cliente</label>
+            <input name="name" type="text" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-info">Salvar <i class="fas fa-save"></i></button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %} 
+<script src="/static/app/config.js"></script>
+{% endblock %}
