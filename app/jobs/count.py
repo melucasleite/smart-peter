@@ -1,4 +1,4 @@
-from app import app, Printer, Count
+from app import app, Printer, Count, db
 import app.crawler as crawler
 
 
@@ -15,6 +15,7 @@ def count():
                 print "Success!"
                 count = int(filter(lambda x: x.isdigit(), count))
                 print count
+                printer.count = count
                 db.session.add(Count(printer.id, count))
                 db.session.commit()
             else:
