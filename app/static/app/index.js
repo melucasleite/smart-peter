@@ -46,8 +46,10 @@ $(document).ready(function() {
   $("#model-select").select2({
     data: models
   });
-  $('.ip_address').mask('099.099.099.099');
-  $('.pat').mask('0999');
+  $("#crawler").val(models[0].crawler);
+  $("#name").val(models[0].name);
+  $(".ip_address").mask("099.099.099.099");
+  $(".pat").mask("0999");
   loadPrinters();
   renderModels();
 });
@@ -68,6 +70,9 @@ function loadPrinters() {
 function renderPrinters() {
   $("#printers").html("");
   $template = $("#printer-template");
+  printers.map(function(printer) {
+    printer.last_moment = moment(printer.last_count).format("LLL");
+  });
   $template.render(printers).appendTo("#printers");
 }
 
@@ -104,5 +109,23 @@ function addPrinter(event, form) {
       });
     },
     error: errorHandler
+  });
+}
+
+function removePrinter(id) {
+  defaultConfirm(function() {
+    $.ajax({
+      url: apiUrl + "printer",
+      data: { id: id },
+      beforeSend: preloaderShow,
+      complete: preloaderHide,
+      method: "DELETE",
+      success: function(data) {
+        defaultSuccess(data, function() {
+          loadPrinters();
+        });
+      },
+      error: errorHandler
+    });
   });
 }

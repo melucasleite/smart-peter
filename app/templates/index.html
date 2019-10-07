@@ -4,11 +4,7 @@
 <!-- ============================================================== -->
 <div class="row page-titles">
   <div class="col-12 align-self-center">
-    <h3 class="text-themecolor">Dashboard</h3>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-      <li class="breadcrumb-item active">Dashboard</li>
-    </ol>
+    <h3 class="text-themecolor">Impressoras</h3>
   </div>
 </div>
 <div class="card">
@@ -62,14 +58,16 @@
   {% endblock %} {% block scripts %}
   <script type="text/template" id="printer-template">
     <div class="col-lg-3">
-        <div class="card">
+        <div class="card text-center">
+          <div class="card-header">
+            <i onclick="removePrinter([[id]])" class="float-right text-danger fas fa-times"></i>
+            <h3>[[pat]]</h3>
+            <p><span>[[name]]</span></p>
+            <p><span>[[ip]]</span></p>
+          </div>
           <div class="card-body">
-            <p>PAT <span>[[pat]]</span></p>
-            <p>Model <span>[[model]]</span></p>
-            <p>IP <span>[[ip]]</span></p>
-            <p>Crawler <span>[[crawler]]</span></p>
-            <p>Location <span>[[location]]</span></p>
-            <p>Count <span>[[count]]</span></p>
+            <p>Contagem: <span>[[count]]</span></p>
+            <p>[[last_moment]]</p>
           </div>
         </div>
       </div>

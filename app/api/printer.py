@@ -26,3 +26,16 @@ def api_printer_post():
     db.session.add(printer)
     db.session.commit()
     return jsonify({"message": "OK"})
+
+
+@app.route("/api/printer", methods=["DELETE"])
+def api_printer_delete():
+    args = request.form
+    print args
+    id = args["id"]
+    printer = Printer.query.get(id)
+    if not printer:
+        return jsonify({"message": "Printer not found."}), 500
+    printer.deleted = True
+    db.session.commit()
+    return jsonify({"message": "OK"})

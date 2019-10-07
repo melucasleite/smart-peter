@@ -35,6 +35,7 @@ class Printer(db.Model):
 
     def to_dict(self):
         return {
+            "id": self.id,
             "pat": self.pat,
             "model": self.model,
             "name": self.name,
