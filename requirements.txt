@@ -35,7 +35,7 @@ Jinja2==2.10.1
 jmespath==0.9.4
 lazy-object-proxy==1.4.2
 lib==3.0.0
-Mako==1.1.0
+Mako==1.2.2
 MarkupSafe==1.1.1
 mccabe==0.6.1
 protobuf==3.9.2
